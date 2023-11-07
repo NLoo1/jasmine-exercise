@@ -44,6 +44,8 @@ function update() {
   // const loanRate = document.getElementById("loan-rate");
   // // const monthlyPayment = document.getElementById("monthly-payment");
 
+  console.log(getCurrentUIValues());
+  console.log(calculateMonthlyPayment(getCurrentUIValues()));
   updateMonthly(calculateMonthlyPayment(getCurrentUIValues()));
 }
 
@@ -52,16 +54,15 @@ function update() {
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
   // let output = (values.amount*(values.amount/12))/(1-(Math.exp(1+(values.rate/12), values.years*12))).toFixed(2);
-  let output = values.amount*(values.rate*12)-(1+(values.rate*12))-(values.years*12).toFixed(2);
-  console.log(output + " THIS IS OUTPUT");
-  return output;
+  let output = values.amount*(values.rate*12)-(1+(values.rate*12))-(values.years*12);
+  // console.log(output + " THIS IS OUTPUT");
+  return output.toFixed(2);
 }
 
 // Given a string representing the monthly payment value,
 // update the UI to show the value.
 function updateMonthly(monthly) {
   const monthlyPayment = document.getElementById("monthly-payment");
-  monthlyPayment.innerText = calculateMonthlyPayment(monthly)
+  monthlyPayment.innerText = monthly
   // monthlyPayment.innerText = "FUCK"
-
 }
