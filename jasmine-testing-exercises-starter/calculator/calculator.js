@@ -53,8 +53,10 @@ function update() {
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
-  // let output = (values.amount*(values.amount/12))/(1-(Math.exp(1+(values.rate/12), values.years*12))).toFixed(2);
-  let output = values.amount*(values.rate*12)-(1+(values.rate*12))-(values.years*12);
+  // let output = (values.amount*(values.amount/12))/(1-(Math.exp(1+(values.rate/12), values.years*12)));
+  let outputTop = values.amount * (values.rate/12);
+  let outputBot = 1 - Math.pow(1+values.rate/12, (values.years*12)*-1);
+  output = outputTop / outputBot;
   // console.log(output + " THIS IS OUTPUT");
   return output.toFixed(2);
 }
