@@ -66,5 +66,4 @@ function calculateMonthlyPayment(values) {
 function updateMonthly(monthly) {
   const monthlyPayment = document.getElementById("monthly-payment");
   monthlyPayment.innerText = monthly
-  // monthlyPayment.innerText = "FUCK"
 }
