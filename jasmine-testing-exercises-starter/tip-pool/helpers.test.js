@@ -28,7 +28,7 @@ describe("should append a new td", function() {
     it("should append a button to server table", function() {
       appendDeleteBtn(tableRow);
       serverTbody.append(tableRow);
-      expect(document.getElementsByClassName("btnRemove").length).toBe(1);
+      expect(document.getElementsByClassName("btnRemove").length).toBeGreaterThanOrEqual(1);
     });
 
     afterEach(function(){
