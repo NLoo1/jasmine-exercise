@@ -17,4 +17,26 @@ describe("should append a new td", function() {
     });
   
   });
+
+  describe("should append a new delete button", function() {
+    let tableRow;
+  
+    beforeEach(function() {
+      tableRow = document.createElement("tr");
+    });
+  
+    it("should append a button to server table", function() {
+      appendDeleteBtn(tableRow);
+      serverTbody.append(tableRow);
+      expect(document.getElementsByClassName("btnRemove").length).toBe(1);
+    });
+
+    afterEach(function(){
+        for(let i = 0; i<document.getElementsByClassName("btnRemove").length; i++){
+          document.getElementsByClassName("btnRemove")[i].remove();
+        }
+    })
+    
+  
+  });
   
