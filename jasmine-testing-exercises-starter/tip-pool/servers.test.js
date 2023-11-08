@@ -13,5 +13,9 @@ describe("Servers test (with setup and tear-down)", function() {
 
   afterEach(function() {
     // teardown logic
+    serverTbody.innerHTML = "";
+    delete allServers.server1;
+    console.log(allServers);
   });
 });
+
